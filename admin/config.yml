@@ -1,0 +1,54 @@
+
+# GitHubとの連携
+backend:
+  name: github
+  repo: ouka45732/ouka45732.github.io
+  branch: master
+
+# 写真の保存先
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+# 日記・メモの管理
+collections:
+  - name: "posts"
+    label: "日記・メモ"
+    label_singular: "記事"
+
+    folder: "_posts"
+    create: true
+
+    # 日付付きファイル名を自動生成
+    slug: "{{date | date('YYYY-MM-DD')}}-{{slug}}"
+
+    # 入力フォーム
+    fields:
+      - label: "タイトル"
+        name: "title"
+        widget: "string"
+        required: true
+
+      - label: "日付"
+        name: "date"
+        widget: "datetime"
+        type: "date"
+        default: "{{now}}"
+
+      - label: "カテゴリー"
+        name: "categories"
+        widget: "select"
+        default: "diary"
+        required: false
+        options:
+          - { label: "日記", value: "diary" }
+          - { label: "技術メモ", value: "notes" }
+          - { label: "旅行記録", value: "travel" }
+
+      - label: "タグ"
+        name: "tags"
+        widget: "list"
+        required: false
+
+      - label: "本文"
+        name: "body"
+        widget: "markdown"
