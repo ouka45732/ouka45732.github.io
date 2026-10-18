@@ -7,7 +7,7 @@ main:
     url: /posts/
 
   - title: "日記を書く・編集"
-    url: https://app.pagescms.org/
+    url: /admin/
 
   - title: "カテゴリー"
     url: /categories/
