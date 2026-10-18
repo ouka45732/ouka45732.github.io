@@ -1,9 +1,15 @@
 main:
-  - title: "Posts"
+  - title: "ホーム"
+    url: /
+
+  - title: "日記・メモ"
     url: /posts/
-  - title: "Categories"
+
+  - title: "カテゴリー"
     url: /categories/
-  - title: "Tags"
+
+  - title: "タグ"
     url: /tags/
-  - title: "About"
+
+  - title: "自己紹介"
     url: /about/
