@@ -1,9 +1,13 @@
+
 main:
   - title: "ホーム"
     url: /
 
   - title: "日記・メモ"
     url: /posts/
+
+  - title: "日記を書く・編集"
+    url: https://app.pagescms.org/
 
   - title: "カテゴリー"
     url: /categories/
