@@ -1,0 +1,62 @@
+
+# 画像の保存先
+media:
+  input: assets/images
+  output: /assets/images
+  rename: safe
+
+# 記事の管理
+content:
+  - name: posts
+    label: "日記・技術メモ"
+    type: collection
+
+    # Jekyllの記事保存フォルダ
+    path: _posts
+
+    # Markdown + YAML Front Matter
+    format: yaml-frontmatter
+
+    # 投稿ファイルの名前を自動生成
+    filename: "{year}-{month}-{day}-{hour}{minute}{second}.md"
+
+    # 管理画面の記事一覧
+    view:
+      fields: [title, date, categories]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+
+    # 記事の入力項目
+    fields:
+      - name: title
+        label: "タイトル"
+        type: string
+        required: true
+
+      - name: date
+        label: "日付"
+        type: date
+        options:
+          format: yyyy-MM-dd
+
+      - name: categories
+        label: "カテゴリー"
+        type: select
+        default: diary
+        options:
+          values:
+            - name: diary
+              label: "日記"
+            - name: notes
+              label: "技術メモ"
+            - name: travel
+              label: "旅行記録"
+
+      - name: body
+        label: "本文"
+        type: rich-text
+        options:
+          format: markdown
